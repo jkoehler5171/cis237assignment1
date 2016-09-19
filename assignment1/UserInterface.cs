@@ -44,7 +44,7 @@ namespace assignment1
                             break;
                         default:
                             Console.WriteLine("");
-                            Console.WriteLine("Please enter a valid option")
+                            Console.WriteLine("Please enter a valid option");
                             break;
                     }
                 }
@@ -61,5 +61,5 @@ namespace assignment1
 
         }
 
-    }
-}
+
+

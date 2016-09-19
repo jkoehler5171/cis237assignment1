@@ -13,7 +13,9 @@ namespace assignment1
 
             CSVProcessor ProcessList = new CSVProcessor();
 
-            string[] test = 
+            ProcessList.ProcessCSV();          
+
+            
 
         }
     }
