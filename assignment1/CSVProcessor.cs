@@ -14,7 +14,7 @@ namespace assignment1
         
 
 
-        public bool ProcessCSV(WineItem[] wineCollection)
+        public bool ProcessCSV(WineItem[] wineItems)
         {
             StreamReader streamReader = null;
 
@@ -28,7 +28,7 @@ namespace assignment1
 
                 while ((line = streamReader.ReadLine()) != null)
                 {
-                    LoadArray(line, wineCollection, counter++);
+                    LoadArray(line, wineItems, counter++);
                 }
                                 
                 return true;
@@ -52,7 +52,7 @@ namespace assignment1
 
         }
 
-        static void LoadArray(string line, WineItem[] wineCollection, int counter)
+        static void LoadArray(string line, WineItem[] wineItems, int counter)
         {
             string[] lineInfo = line.Split(',');
 
@@ -60,7 +60,7 @@ namespace assignment1
             string wineDescription = lineInfo[1];
             string winePack = lineInfo[2];
 
-            wineCollection[counter]= new WineItem(wineID, wineDescription, winePack);
+            wineItems[counter]= new WineItem(wineID, wineDescription, winePack);
 
 
         }

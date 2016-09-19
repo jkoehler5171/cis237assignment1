@@ -11,13 +11,17 @@ namespace assignment1
         static void Main(string[] args)
         {
 
-            WineItem[] wineCollection = new WineItem[500];
+            WineItem[] wineItems = new WineItem[500];
 
             CSVProcessor ProcessList = new CSVProcessor();
 
-            ProcessList.ProcessCSV(wineCollection);
+            ProcessList.ProcessCSV(wineItems);
 
-            Console.WriteLine(wineCollection[3].ToString());
+            UserInterface userInterface = new UserInterface();
+
+            userInterface.MainMenu(wineItems);
+
+            
 
                       
 

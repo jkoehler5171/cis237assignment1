@@ -9,12 +9,22 @@ namespace assignment1
     class UserInterface
     {
 
-        public void MainMenu()
+        public UserInterface()
         {
-            bool exitBoolean = true;
+
+        }
+
+        public UserInterface(WineItem[] wineItems)
+        {
+
+        }
+
+        public void MainMenu(WineItem[] wineItems)
+        {
+            bool exitBoolean = false;
             int choiceInt;
              
-            while(exitBoolean != false)
+            while(exitBoolean == false)
             {
                 Console.WriteLine("Wine List Program V1");
                 Console.WriteLine();
@@ -33,7 +43,7 @@ namespace assignment1
                     switch (choiceInt)
                     {
                         case 1:
-                            //Placeholder
+                            PrintList(wineItems);
                             break;
                         case 2:
                             break;
@@ -53,10 +63,33 @@ namespace assignment1
                     Console.WriteLine("Please enter a valid option");
                 }
 
+                
 
 
-                    }
-                }
+              }
+
+            Environment.Exit(0);
+
+        }
+
+       public void PrintList(WineItem[] wineItems)
+        {
+            int counter = 0;
+
+            while (counter < wineItems.GetLength(0))
+            {
+                Console.WriteLine(wineItems[counter].ToString());
+                counter++;
+            }
+            
+
+            
+        }
+
+                
+            
+                
+
             }
 
         }

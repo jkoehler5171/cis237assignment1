@@ -8,7 +8,7 @@ namespace assignment1
 {
     class WineItemCollection
     {
-        private string[] wineItems;
+        
 
     }
 }
