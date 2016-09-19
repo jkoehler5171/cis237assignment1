@@ -10,6 +10,11 @@ namespace assignment1
     {
         static void Main(string[] args)
         {
+
+            CSVProcessor ProcessList = new CSVProcessor();
+
+            string[] test = 
+
         }
     }
 }
