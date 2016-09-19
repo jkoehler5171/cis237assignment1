@@ -11,10 +11,10 @@ namespace assignment1
     {
         string _csvPath = "../../../datafiles/WineList.csv";
 
-        WineItemCollection[] wineCollection = new WineItemCollection[500];
         
 
-        public bool ProcessCSV()
+
+        public bool ProcessCSV(WineItem[] wineCollection)
         {
             StreamReader streamReader = null;
 
@@ -30,7 +30,7 @@ namespace assignment1
                 {
                     LoadArray(line, wineCollection, counter++);
                 }
-
+                                
                 return true;
 
             }
@@ -52,7 +52,7 @@ namespace assignment1
 
         }
 
-        static void LoadArray(string line, WineItemCollection[] wineCollection, int counter)
+        static void LoadArray(string line, WineItem[] wineCollection, int counter)
         {
             string[] lineInfo = line.Split(',');
 

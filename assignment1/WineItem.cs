@@ -43,8 +43,13 @@ namespace assignment1
         public WineItem()
         {
 
-        }            
-            
+        }
+
+        public override string ToString()
+        {
+            return _wineID + " " + _wineDescription + " " + _winePack;
+
+        }
 
     }
 }
