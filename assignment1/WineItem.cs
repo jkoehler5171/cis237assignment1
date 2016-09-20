@@ -45,13 +45,24 @@ namespace assignment1
 
         }
 
-        public override string ToString()
+        public override string ToString() // Overwrites the default ToString Method. Prints the ID, Description, and Packaging information.
         {
             return _wineID + " " + _wineDescription + " " + _winePack;
 
         }
 
-        
+        public int GetArrayLength(WineItem[] wineItems) //Calculates the number of items in the array for use elsewhere. Pretty much exactly what it says on the tin.
+        {
+            int arrayLength = 0;
+
+            while (wineItems[arrayLength] != null)
+            {
+                arrayLength++;
+            }
+
+            return arrayLength;
+        }
+
 
     }
 }

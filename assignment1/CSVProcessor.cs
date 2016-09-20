@@ -14,7 +14,7 @@ namespace assignment1
         
 
 
-        public bool ProcessCSV(WineItem[] wineItems)
+        public bool ProcessCSV(WineItem[] wineItems) //Reads the CSV file using a Streamreader
         {
             StreamReader streamReader = null;
 
@@ -52,7 +52,7 @@ namespace assignment1
 
         }
 
-        static void LoadArray(string line, WineItem[] wineItems, int counter)
+        static void LoadArray(string line, WineItem[] wineItems, int counter) // Loads the CSV information into the Array.
         {
             string[] lineInfo = line.Split(',');
 

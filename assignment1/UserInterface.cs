@@ -14,12 +14,12 @@ namespace assignment1
 
         }
 
-        public UserInterface(WineItem[] wineItems)
+        public UserInterface(WineItem[] wineItems, CSVProcessor processList)
         {
 
         }
 
-        public void MainMenu(WineItem[] wineItems)
+        public void MainMenu(WineItem[] wineItems, CSVProcessor processList) // Contains the main menu text and decsion structure. 
         {
             bool exitBoolean = false;
             int choiceInt;
@@ -29,10 +29,11 @@ namespace assignment1
                 Console.WriteLine("Wine List Program V1");
                 Console.WriteLine();
                 Console.WriteLine("Please choose a menu option below:");
-                Console.WriteLine("1. Display Wine List");
-                Console.WriteLine("2. Search Wine List");
-                Console.WriteLine("3. Add Item To Wine List");
-                Console.WriteLine("4. Exit Program");
+                Console.WriteLine("1. Load Wine List");
+                Console.WriteLine("2. Display Wine List");
+                Console.WriteLine("3. Search Wine List");
+                Console.WriteLine("4. Add Item To Wine List");
+                Console.WriteLine("5. Exit Program");
                 Console.WriteLine();
                 Console.Write("Enter the number of your choice: ");
 
@@ -43,15 +44,18 @@ namespace assignment1
                     switch (choiceInt)
                     {
                         case 1:
-                            PrintList(wineItems);
+                            processList.ProcessCSV(wineItems);
                             break;
                         case 2:
-                            SearchArray(wineItems);
+                            PrintList(wineItems);
                             break;
                         case 3:
-                            InsertToArray(wineItems);
+                            SearchArray(wineItems);
                             break;
                         case 4:
+                            InsertToArray(wineItems);
+                            break;
+                        case 5:
                             exitBoolean = true;
                             break;
                         default:
@@ -59,7 +63,7 @@ namespace assignment1
                             break;
                     }
                 }
-                catch (Exception e)
+                catch
                 {
                     Console.WriteLine("Please enter a valid option");
 
@@ -70,11 +74,11 @@ namespace assignment1
 
             }
 
-            Environment.Exit(0);
+            
 
         }
 
-        private void PrintList(WineItem[] wineItems)
+        private void PrintList(WineItem[] wineItems) // Prints out the wine list loaded into the array. Exactly what it says on the tin.
         {
             int counter = 0;
 
@@ -88,7 +92,7 @@ namespace assignment1
 
         }
 
-        private void SearchArray(WineItem[] wineItems)
+        private void SearchArray(WineItem[] wineItems) // Searches the array for a matching Wine ID. Simple linear search
         {
             string searchTarget;
             int subscript = 0;
@@ -127,7 +131,7 @@ namespace assignment1
         }
         
         
-        private void InsertToArray(WineItem[] wineItems)
+        private void InsertToArray(WineItem[] wineItems) // Adds an item to the end of the array. Does not save to the CSV
         {
             string userAddedID;
             string userAddedDescription;
@@ -159,7 +163,7 @@ namespace assignment1
 
         }
 
-        private int GetArrayLength(WineItem[] wineItems)
+        private int GetArrayLength(WineItem[] wineItems) //Calculates the number of items in the array
         {
             int arrayLength = 0;
 

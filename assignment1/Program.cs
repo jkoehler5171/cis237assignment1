@@ -10,22 +10,21 @@ namespace assignment1
     {
         static void Main(string[] args)
         {
+            UserInterface userInterface = new UserInterface(); //Creates a new UI instance
 
-            WineItem[] wineItems = new WineItem[50000];
+            WineItem[] wineItems = new WineItem[50000]; // Creates a new array of WineItems
 
-            CSVProcessor ProcessList = new CSVProcessor();
+            CSVProcessor ProcessList = new CSVProcessor();  //Exactly what it says on the tin, processes the included CSV                                 
 
-            ProcessList.ProcessCSV(wineItems);
+            userInterface.MainMenu(wineItems,ProcessList);
 
-            UserInterface userInterface = new UserInterface();
+            Environment.Exit(0);
 
-            userInterface.MainMenu(wineItems);
 
-            
 
-                      
 
-            
+
+
 
         }
     }
