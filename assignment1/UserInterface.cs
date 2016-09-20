@@ -63,10 +63,6 @@ namespace assignment1
                 {
                     Console.WriteLine("Please enter a valid option");
 
-                    Console.WriteLine(e.ToString());
-                    Console.WriteLine();
-                    Console.WriteLine(e.StackTrace);
-
                 }
 
 
@@ -157,7 +153,7 @@ namespace assignment1
 
             arrayLength = GetArrayLength(wineItems);
 
-            wineItems[arrayLength + 1] = new WineItem(userAddedID, userAddedDescription, userAddedPack); 
+            wineItems[arrayLength] = new WineItem(userAddedID, userAddedDescription, userAddedPack); 
 
 
 
