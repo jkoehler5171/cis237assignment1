@@ -11,7 +11,7 @@ namespace assignment1
         static void Main(string[] args)
         {
 
-            WineItem[] wineItems = new WineItem[500];
+            WineItem[] wineItems = new WineItem[50000];
 
             CSVProcessor ProcessList = new CSVProcessor();
 

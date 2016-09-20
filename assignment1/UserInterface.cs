@@ -23,8 +23,8 @@ namespace assignment1
         {
             bool exitBoolean = false;
             int choiceInt;
-             
-            while(exitBoolean == false)
+
+            while (exitBoolean == false)
             {
                 Console.WriteLine("Wine List Program V1");
                 Console.WriteLine();
@@ -46,53 +46,141 @@ namespace assignment1
                             PrintList(wineItems);
                             break;
                         case 2:
+                            SearchArray(wineItems);
                             break;
                         case 3:
+                            InsertToArray(wineItems);
                             break;
                         case 4:
                             exitBoolean = true;
                             break;
                         default:
                             Console.WriteLine("");
-                            Console.WriteLine("Please enter a valid option");
                             break;
                     }
                 }
-                catch
+                catch (Exception e)
                 {
                     Console.WriteLine("Please enter a valid option");
+
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine();
+                    Console.WriteLine(e.StackTrace);
+
                 }
 
-                
 
 
-              }
+
+            }
 
             Environment.Exit(0);
 
         }
 
-       public void PrintList(WineItem[] wineItems)
+        private void PrintList(WineItem[] wineItems)
         {
             int counter = 0;
 
-            while (counter < wineItems.GetLength(0))
+            while (wineItems[counter] != null)
             {
                 Console.WriteLine(wineItems[counter].ToString());
                 counter++;
             }
-            
 
-            
+
+
         }
 
-                
-            
-                
+        private void SearchArray(WineItem[] wineItems)
+        {
+            string searchTarget;
+            int subscript = 0;
+            int countInt = 0;
+
+            Console.WriteLine();
+
+            Console.Write("Please enter the wine ID: ");
+
+            searchTarget = Console.ReadLine().Trim();
+
+            Console.WriteLine();
+
+            while (wineItems[subscript] != null)
+            {
+                if (wineItems[subscript].WineID == searchTarget)
+                {
+                    Console.WriteLine("Item Found!");
+                    Console.WriteLine(wineItems[subscript].ToString());
+                    Console.WriteLine("");
+
+                    countInt++;
+                }
+                subscript++;
 
             }
 
+            if (countInt < 1)
+            {
+                Console.WriteLine("Item not found");
+                Console.WriteLine("");
+            }
+
+
+
         }
+        
+        
+        private void InsertToArray(WineItem[] wineItems)
+        {
+            string userAddedID;
+            string userAddedDescription;
+            string userAddedPack;
+            int arrayLength;
+
+            Console.WriteLine("");
+            Console.WriteLine("Please enter a new wine ID:");
+            userAddedID = Console.ReadLine().Trim();
+
+            Console.WriteLine("");
+            Console.WriteLine("Please enter a new wine description:");
+            userAddedDescription = Console.ReadLine().Trim();
+
+            Console.WriteLine("");
+            Console.WriteLine("Please enter the packaging information:");
+            userAddedPack = Console.ReadLine().Trim();
+
+            Console.WriteLine("");
+            Console.WriteLine("The following item will be added to the wine list:");
+            Console.WriteLine(userAddedID + " " + userAddedDescription + " " + userAddedPack);
+            Console.WriteLine("");
+
+            arrayLength = GetArrayLength(wineItems);
+
+            wineItems[arrayLength + 1] = new WineItem(userAddedID, userAddedDescription, userAddedPack); 
+
+
+
+        }
+
+        private int GetArrayLength(WineItem[] wineItems)
+        {
+            int arrayLength = 0;
+
+            while (wineItems[arrayLength] != null)
+            {
+                arrayLength++;
+            }
+
+            return arrayLength;
+        }
+
+
+
+
+    }
+
+}
 
 
 
