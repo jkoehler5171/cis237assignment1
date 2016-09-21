@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Jordan Koehler, CIS237 TR@ 3:30
+//September 21st 2016
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +12,7 @@ namespace assignment1
 {
     class CSVProcessor
     {
-        string _csvPath = "../../../datafiles/WineList.csv";
+       string _csvPath = "../../../datafiles/WineList.csv";  //This holds the location of the CSV file
 
         
 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Jordan Koehler, CIS237 TR@ 3:30
+//September 21st 2016
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +56,7 @@ namespace assignment1
                             SearchArray(wineItems);
                             break;
                         case 4:
-                            InsertToArray(wineItems);
+                            WineItem.InsertToArray(wineItems);
                             break;
                         case 5:
                             exitBoolean = true;
@@ -129,55 +132,7 @@ namespace assignment1
 
 
         }
-        
-        
-        private void InsertToArray(WineItem[] wineItems) // Adds an item to the end of the array. Does not save to the CSV
-        {
-            string userAddedID;
-            string userAddedDescription;
-            string userAddedPack;
-            int arrayLength;
-
-            Console.WriteLine("");
-            Console.WriteLine("Please enter a new wine ID:");
-            userAddedID = Console.ReadLine().Trim();
-
-            Console.WriteLine("");
-            Console.WriteLine("Please enter a new wine description:");
-            userAddedDescription = Console.ReadLine().Trim();
-
-            Console.WriteLine("");
-            Console.WriteLine("Please enter the packaging information:");
-            userAddedPack = Console.ReadLine().Trim();
-
-            Console.WriteLine("");
-            Console.WriteLine("The following item will be added to the wine list:");
-            Console.WriteLine(userAddedID + " " + userAddedDescription + " " + userAddedPack);
-            Console.WriteLine("");
-
-            arrayLength = GetArrayLength(wineItems);
-
-            wineItems[arrayLength] = new WineItem(userAddedID, userAddedDescription, userAddedPack); 
-
-
-
-        }
-
-        private int GetArrayLength(WineItem[] wineItems) //Calculates the number of items in the array
-        {
-            int arrayLength = 0;
-
-            while (wineItems[arrayLength] != null)
-            {
-                arrayLength++;
-            }
-
-            return arrayLength;
-        }
-
-
-
-
+                        
     }
 
 }

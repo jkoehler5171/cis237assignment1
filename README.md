@@ -1,8 +1,8 @@
-# Assignment 1 - Review of C# Basic Concepts and Introduction to Git
+﻿# Assignment 1 - Review of C# Basic Concepts and Introduction to Git
 ## Due 9-20-2016
 
 ## Author
-
+Jordan Koehler
 ## Description
 
 Create a C# console program to work with a .CSV wine list. The program should continually run until the user decides to exit (entering a certain character on the keyboard). The program should allow the following functionality:
@@ -80,5 +80,9 @@ Suggestion/Hints:
 | **Total**           | **100**|
 
 ## Outside Resources Used
+I used a number of programs I wrote for my previous c# class, as well as a few of the
+example programs for that class, written alongside the instructor
 
 ## Known Problems, Issues, And/Or Errors in the Program
+Program itself seems to work pretty well, though I will admit I did not actually figure
+out what to do with two different classes of WineItems.

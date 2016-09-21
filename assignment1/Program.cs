@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Jordan Koehler, CIS237 TR@ 3:30
+//September 21st 2016
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +19,7 @@ namespace assignment1
 
             CSVProcessor ProcessList = new CSVProcessor();  //Exactly what it says on the tin, processes the included CSV                                 
 
-            userInterface.MainMenu(wineItems,ProcessList);
+            userInterface.MainMenu(wineItems,ProcessList); //Loads the UI
 
             Environment.Exit(0);
 
