@@ -12,6 +12,8 @@ namespace assignment1
     class UserInterface
     {
 
+        private bool listProcessed = false;
+        
         public UserInterface()
         {
 
@@ -47,7 +49,16 @@ namespace assignment1
                     switch (choiceInt)
                     {
                         case 1:
-                            processList.ProcessCSV(wineItems);
+                            if (listProcessed == false)
+                            {
+                                processList.ProcessCSV(wineItems);
+                                listProcessed = true;
+                                Console.WriteLine("List successfully loaded");
+                            }
+                            else
+                            {
+                                Console.WriteLine("The list has already been loaded.");
+                            }
                             break;
                         case 2:
                             PrintList(wineItems);
